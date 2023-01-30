@@ -1,15 +1,22 @@
 ---
 title: "Homework 1"
-author: "[Insert your name here]{style='background-color: yellow;'}"
+author: "[Conner Langnas]{style='background-color: yellow;'}"
 toc: true
 title-block-banner: true
 title-block-style: default
-# format: html
-format: pdf
+format: html
+# format: pdf
 ---
 
-[Link to the Github repository](https://github.com/psu-stat380/hw-1)
+Changes to look at
+Car bread things code github test test test 
+test
+ 
 
+
+[Link to the Github repository](https://github.com/psu-stat380/hw-1)
+ 
+things to look at to see changes
 ---
 
 ::: {.callout-important}
