@@ -128,7 +128,14 @@ my_vec_int <- as.integer(my_vec)
     * ```r FALSE``` if an element in `my_vec_double` is $\ge 0$
 
 ```{R}
-my_vec_bool
+my_vec_bool <- my_vec_double <= 0
+
+
+#{
+#    print("TRUE")
+#} else {
+#    print("FALSE")
+#}
 
 ```
 

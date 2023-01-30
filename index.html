@@ -134,6 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#question-1" id="toc-question-1" class="nav-link active" data-scroll-target="#question-1">Question 1</a></li>
   <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
   <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a></li>
   </ul>
 </nav>
@@ -247,129 +248,150 @@ Due: Sun, Jan 29, 2023 @ 11:59pm
 </div>
 <p>For the following questions, provide your answers in a code cell.</p>
 <ol type="1">
-<li><p>What data type does the vector contain? It is a character vector.</p></li>
-<li><p>Create two new vectors called <code>my_vec_double</code> and <code>my_vec_int</code> which converts <code>my_vec</code> to Double &amp; Integer types, respectively,</p></li>
+<li><p>What data type does the vector contain?</p>
+<p>It is a character vector.</p></li>
+<li><p>Create two new vectors called <code>my_vec_double</code> and <code>my_vec_int</code> which converts <code>my_vec</code> to Double &amp; Integer types, respectively, ::: {.cell}</p></li>
 </ol>
-<pre><code>1. Create a new vector `my_vec_bool` which comprises of:
-    * ``TRUE``if an element in `my_vec_double` is $\le 0$
-    * ``FALSE`` if an element in `my_vec_double` is $\ge 0$
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>my_vec_double <span class="ot">&lt;-</span> <span class="fu">as.double</span>(my_vec)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>my_vec_int <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(my_vec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>::: 1. Create a new vector <code>my_vec_bool</code> which comprises of: * <code>TRUE</code>if an element in <code>my_vec_double</code> is <span class="math inline">\(\le 0\)</span> * <code>FALSE</code> if an element in <code>my_vec_double</code> is <span class="math inline">\(\ge 0\)</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>my_vec_bool <span class="ot">&lt;-</span> my_vec_double <span class="sc">&lt;=</span> <span class="dv">0</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#{</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#    print("TRUE")</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#} else {</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">#    print("FALSE")</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<pre><code>How many elements of `my_vec_double` are greater than zero?</code></pre>
+<ol type="1">
+<li>Sort the values of <code>my_vec_double</code> in ascending order.</li>
+</ol>
+<p><br><br><br><br> <br><br><br><br></p>
+<hr>
+</section>
+<section id="question-3" class="level2">
+<h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+50 points
+</div>
+</div>
+<div class="callout-body-container callout-body">
 
-    How many elements of `my_vec_double` are greater than zero?
-
-1. Sort the values of `my_vec_double` in ascending order. 
-
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
----
-
-## Question 3
-::: {.callout-tip}
-## 50 points
-:::
-
-In this question we will get a better understanding of how `R` handles large data structures in memory. 
-
-1. Provide `R` code to construct the following matrices:
-$$
-\begin{bmatrix} 
+</div>
+</div>
+<p>In this question we will get a better understanding of how <code>R</code> handles large data structures in memory.</p>
+<ol type="1">
+<li>Provide <code>R</code> code to construct the following matrices: <span class="math display">\[
+\begin{bmatrix}
 1 &amp; 2 &amp; 3\\
 4 &amp; 5 &amp; 6\\
 7 &amp; 8 &amp; 9\\
 \end{bmatrix}
 \quad \text{ and } \quad
-\begin{bmatrix} 
+\begin{bmatrix}
 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; \dots &amp; 100\\
 1 &amp; 4 &amp; 9 &amp; 16 &amp; 25 &amp; \dots &amp; 10000\\
 \end{bmatrix}
-$$
-
-::: {.callout-warning}
-## Tip
-
-Recall the discussion in class on how `R` fills in matrices
-:::
-
-In the next part, we will discover how knowledge of the way in which a matrix is stored in memory can inform better code choices. To this end, the following function takes an input $n$ and creates an $n \times n$ matrix with random entries. 
-
-::: {.cell}
-
-```{.r .cell-code}
-generate_matrix &lt;- function(n){
-    return(
-        matrix(
-            rnorm(n^2),
-            nrow=n
-        )
-    )
-}</code></pre>
-<p>:::</p>
+\]</span></li>
+</ol>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Recall the discussion in class on how <code>R</code> fills in matrices</p>
+</div>
+</div>
+<p>In the next part, we will discover how knowledge of the way in which a matrix is stored in memory can inform better code choices. To this end, the following function takes an input <span class="math inline">\(n\)</span> and creates an <span class="math inline">\(n \times n\)</span> matrix with random entries.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>generate_matrix <span class="ot">&lt;-</span> <span class="cf">function</span>(n){</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">matrix</span>(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>            <span class="fu">rnorm</span>(n<span class="sc">^</span><span class="dv">2</span>),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">nrow=</span>n</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>For example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">generate_matrix</span>(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">generate_matrix</span>(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>           [,1]        [,2]       [,3]       [,4]
-[1,] 1.80951138  0.29980364  0.3753020 -0.1867120
-[2,] 0.24068604  0.92022057 -0.9250081  1.2957792
-[3,] 0.03234778 -0.23758134  1.0847829  0.3998806
-[4,] 0.59049057  0.07616803 -1.2558580 -1.2143651</code></pre>
+<pre><code>           [,1]       [,2]       [,3]       [,4]
+[1,] -0.3460814  1.0497819  0.8419407 -0.3904034
+[2,] -1.7353724 -0.1684062 -0.9650446 -0.2415853
+[3,]  1.3912436 -0.6429042  1.2353601 -1.4287917
+[4,]  0.4632175  1.0371260 -0.4508563  0.7536948</code></pre>
 </div>
 </div>
 <p>Let <code>M</code> be a fixed <span class="math inline">\(50 \times 50\)</span> matrix</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fu">generate_matrix</span>(<span class="dv">50</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(M)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fu">generate_matrix</span>(<span class="dv">50</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(M)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.0156391</code></pre>
+<pre><code>[1] 0.009014276</code></pre>
 </div>
 </div>
 <ol start="2" type="1">
 <li>Write a function <code>row_wise_scan</code> which scans the entries of <code>M</code> one row after another and outputs the number of elements whose value is <span class="math inline">\(\ge 0\)</span>. You can use the following <strong>starter code</strong></li>
 </ol>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>row_wise_scan <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(x)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    m <span class="ot">&lt;-</span> <span class="fu">ncol</span>(x)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Insert your code here</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(...){</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span>(...){</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span>(...){</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>                count <span class="ot">&lt;-</span> count <span class="sc">+</span> <span class="dv">1</span> </span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>            }</span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(count)</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>row_wise_scan <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(x)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    m <span class="ot">&lt;-</span> <span class="fu">ncol</span>(x)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Insert your code here</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(...){</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span>(...){</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span>(...){</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>                count <span class="ot">&lt;-</span> count <span class="sc">+</span> <span class="dv">1</span> </span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>            }</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(count)</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="3" type="1">
 <li>Similarly, write a function <code>col_wise_scan</code> which does exactly the same thing but scans the entries of <code>M</code> one column after another</li>
 </ol>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>col_wise_scan <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    ... <span class="co"># Insert your code here</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(count)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>col_wise_scan <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    ... <span class="co"># Insert your code here</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(count)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can check if your code is doing what it’s supposed to using the function here<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <ol start="4" type="1">
 <li><p>Between <code>col_wise_scan</code> and <code>row_wise_scan</code>, which function do you expect to take shorter to run? Why?</p></li>
 <li><p>Write a function <code>time_scan</code> which takes in a method <code>f</code> and a matrix <code>M</code> and outputs the amount of time taken to run <code>f(M)</code></p></li>
 </ol>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>time_scan <span class="ot">&lt;-</span> <span class="cf">function</span>(f, M){</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    initial_time <span class="ot">&lt;-</span> ... <span class="co"># Write your code here</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">f</span>(M)</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    final_time <span class="ot">&lt;-</span> ...  <span class="co"># Write your code here</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    total_time_taken <span class="ot">&lt;-</span> final_time <span class="sc">-</span> initial_time</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(total_time_taken)</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>time_scan <span class="ot">&lt;-</span> <span class="cf">function</span>(f, M){</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    initial_time <span class="ot">&lt;-</span> ... <span class="co"># Write your code here</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">f</span>(M)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    final_time <span class="ot">&lt;-</span> ...  <span class="co"># Write your code here</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    total_time_taken <span class="ot">&lt;-</span> final_time <span class="sc">-</span> initial_time</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(total_time_taken)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Provide your output to</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">row_wise_time =</span> <span class="fu">time_scan</span>(row_wise_scan, M),</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">col_wise_time =</span> <span class="fu">time_scan</span>(row_wise_scan, M)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">row_wise_time =</span> <span class="fu">time_scan</span>(row_wise_scan, M),</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">col_wise_time =</span> <span class="fu">time_scan</span>(row_wise_scan, M)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Which took longer to run?</p>
 <ol start="6" type="1">
 <li>Repeat this experiment now when:
@@ -387,7 +409,7 @@ generate_matrix &lt;- function(n){
 <h1>Appendix</h1>
 <p>Print your <code>R</code> session information using the following command</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.2.2 Patched (2022-11-10 r83330)
 Platform: x86_64-pc-linux-gnu (64-bit)
@@ -422,10 +444,10 @@ loaded via a namespace (and not attached):
 
 <ol>
 <li id="fn1"><p>If your code is right, the following code should evaluate to be <code>TRUE</code></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="cf">function</span>(i) {</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> <span class="fu">generate_matrix</span>(<span class="dv">100</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">row_wise_scan</span>(x) <span class="sc">==</span> <span class="fu">col_wise_scan</span>(x)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>}) <span class="sc">%&gt;%</span> sum <span class="sc">==</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="cf">function</span>(i) {</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> <span class="fu">generate_matrix</span>(<span class="dv">100</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">row_wise_scan</span>(x) <span class="sc">==</span> <span class="fu">col_wise_scan</span>(x)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>}) <span class="sc">%&gt;%</span> sum <span class="sc">==</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></li>
 </ol>
 </section></div></main>
